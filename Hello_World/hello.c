@@ -5,12 +5,14 @@
  *      Author: RAJ
  */
 #include<stdio.h>
-int main()
+int main(void)
 {
+
 	int a=3,b=4,s;
 	s=a+b;
 	printf("HELLO WORLD !!!!!!");
 	printf("\n%d",s);
 return 0;
+
 }
 
