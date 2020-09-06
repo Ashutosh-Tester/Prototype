@@ -1,6 +1,7 @@
+<html>
 <head>
-<body>
-<title>My First Page</title>
-<p align="center">Hello Everyone</p>
+<title>adrienette</title>
+</head>
+<body text="white" background="mira.jpg"> i love miraculous ladybug.
 </body>
-<head>
+</html>
