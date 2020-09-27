@@ -57,8 +57,8 @@ int pop()
 int main(void)
 {
  int a;
- while(a!=5){
- printf("\nEnter 1 for push\nEnter 2 for dislpay\nEnter 3 for pop\nEnter 4 for peek\nEnter Enter the choice\n");
+ do{
+ printf("\nEnter 1 for push\nEnter 2 for dislpay\nEnter 3 for pop\nEnter 4 for peek\nEnter the choice\n");
  scanf("%d",&a);
  switch(a){
  	case 1:printf("\nEnter the elements in the stack\n");
@@ -78,8 +78,8 @@ int main(void)
     case 4:printf("The Peeked Element is : ");
     peep();
     break;
-  default: printf("Enter correct choice");
+  default: printf("Enter correct choice");}
  }
-}
+ while(a<=4);
   return 0;  
 }
