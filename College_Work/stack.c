@@ -16,10 +16,12 @@ if(top<Size-1)
 		top++;
 	}
 }
+
 else
 {
 	printf("Stack Overflow\n");
 }
+
 }
 void peep()
  {
@@ -29,28 +31,31 @@ void peep()
  		c=stack[top];
  		printf("\npeep = %d \n",c);
  	}
+ 
  	else{
  		printf("Stack Is Empty");
  	}
-
 
  }
 void display()
 {
 	//printf("%d\n",top);
+	
 	for(int i=0;i<Size;i++)
 	{
 		printf("%d ",stack[i]);
 	}
+
 }
-int pop()
+void pop()
 {
 	if(top>=0)
 	{
 		
 		int n=stack[top];
 		top--;
-		return n;
+		printf("Pop = %d",n);
+		// return n;
 	}
 
 
@@ -67,11 +72,15 @@ int main()
 	peep();
 	display();
 	printf("\n");
-    v=pop();
-	printf("%d \n",v);
-    v=pop();
-	printf("%d ",v);
+	pop();
+ //    v=pop();
+	// printf("%d \n",v);
+ //    v=pop();
+	// printf("%d ",v);
 	peep();
+	pop();
+	peep();
+	display();
 	
 	return 0;
 

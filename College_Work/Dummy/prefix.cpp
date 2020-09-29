@@ -104,7 +104,9 @@ string infixToPrefix(string infix)
 int main() 
 { 
     //string s = ("(a-b/c)*(a/k-l)");
-    string s = ("(a+b)*c"); 
+    // string s = ("(a+b) * c + (d* (e + f)* g) + h"); 
+    // string s=("d*(e+f)*g");
+    string s=("a+b+c");
     cout << infixToPrefix(s) << std::endl; 
     return 0; 
 } 
