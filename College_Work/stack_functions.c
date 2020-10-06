@@ -34,11 +34,17 @@ void peep()
  	}
  }
 void display()
-{
+{int pointer=top;
 	//printf("%d\n",top);
-	for(int i=0;i<Size;i++)
+	if(pointer==-1)
 	{
-		printf("%d ",stack[i]);
+		printf("Stack is Empty Now");
+	}
+	else
+	{
+	for(int i=0;i<=pointer;i++)
+	{
+		printf("%d ",stack[i]);}
 	}
 }
 int pop()
@@ -82,4 +88,5 @@ int main(void)
  }
  while(a<=4);
   return 0;  
+
 }
