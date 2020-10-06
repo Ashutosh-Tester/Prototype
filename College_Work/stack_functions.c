@@ -18,7 +18,7 @@ if(top<Size-1)
 }
 else
 {
-	printf("Stack Overflow\n");
+	printf("\nStack Overflow\n");
 }
 }
 void peep()
@@ -30,7 +30,7 @@ void peep()
  		printf("%d",c);
  	}
  	else{
- 		printf("Stack Is Empty");
+ 		printf("\nStack Is Empty");
  	}
  }
 void display()
@@ -38,7 +38,7 @@ void display()
 	//printf("%d\n",top);
 	if(pointer==-1)
 	{
-		printf("Stack is Empty Now");
+		printf("\nStack is Empty Now");
 	}
 	else
 	{
@@ -64,7 +64,7 @@ int main(void)
 {
  int a;
  do{
- printf("\nEnter 1 for push\nEnter 2 for dislpay\nEnter 3 for pop\nEnter 4 for peek\nEnter the choice\n");
+ printf("\n\nEnter 1 for push\nEnter 2 for dislpay\nEnter 3 for pop\nEnter 4 for peek\nEnter the choice\n");
  scanf("%d",&a);
  switch(a){
  	case 1:printf("\nEnter the elements in the stack\n");
@@ -76,15 +76,15 @@ int main(void)
     case 2:printf("\nElements in the stack : ");
     display();
     break;
-    case 3:printf("Elements in the stack : ");
+    case 3:printf("\nElements in the stack : ");
     display();
      int h=pop();
-    printf("\nPopped Element : %d",h);
+    printf("\n\nPopped Element : %d\n",h);
     break;
-    case 4:printf("The Peeked Element is : ");
+    case 4:printf("\nThe Peeked Element is : ");
     peep();
     break;
-  default: printf("Enter correct choice");}
+  default: printf("\nEnter correct choice");}
  }
  while(a<=4);
   return 0;  
