@@ -39,11 +39,18 @@ void peep()
  }
 void display()
 {
-	//printf("%d\n",top);
-	
-	for(int i=0;i<Size;i++)
+	int pointer;
+	pointer=top;
+	if(pointer==-1)
 	{
-		printf("%d ",stack[i]);
+		printf("\nStack is Empty\n");
+	}
+	else{
+		printf("\nElements in the stack : ");
+		for(int i=0;i<=pointer;i++)
+		{
+			printf("%d ",stack[i]);
+		}
 	}
 
 }
@@ -55,7 +62,7 @@ void pop()
 		int n=stack[top];
 		top--;
 		printf("Pop = %d",n);
-		// return n;
+		
 	}
 
 
