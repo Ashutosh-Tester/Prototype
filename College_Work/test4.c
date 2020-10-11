@@ -70,15 +70,17 @@ int main(void)
 	push(3);
 	push(4);
 	push(5);
+	display();
+	pop();
 	peek();
 	pop();
+	peek();
 	pop();
-	display();
+	peek();
 	pop();
+	peek();
 	pop();
-	pop();
-	pop();
-	display();
+	peek();
 
 
 }
