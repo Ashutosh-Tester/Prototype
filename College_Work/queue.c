@@ -1,48 +1,86 @@
 #include<stdio.h>
-#define Size 5
+#define Size 6
 int queue[Size];
-int head=-1;int rear=-1;
-void add()
-{ int data;
-	if(rear==Size-1)
+int head=-1;
+int rear=-1;
+void offer()
+{ 
+	int data;data=0;
+	printf("\nEnter element\n");
+	    scanf("%d",&data);
+	if(rear==Size)
 	{
 		printf("\nQueue is Full Now\n");}
 else
 {
-	if(head==-1)
+	if(head==-1){
 		head=0;
-		
-	else
-		rear=rear+1;
-	printf("\nEnter element\n");
-	 scanf("%d",&data);
+	    rear=0;
+	    queue[rear++]=data;
+	}
+
+	else{
 		queue[rear]=data;
+		rear++;
+			}
 }
 
 }
-
-void remove_out()
+void display()
 {
-	if(head==-1||head>rear)
+	for(int i=0;i<Size;i++)
 	{
-		printf("\nUnderflow\n");
+		printf("%d ",queue[i]);
+
+	}
+}
+
+void poll()
+{
+	if(head==-1)
+	{
+		head=0;
+	}
+	else if(head==rear)
+	{
+		printf("\nnull\n");
+		head=-1;
+		rear=-1;
 	}
 	else
 		{
 			printf("%d ",queue[head]);
 			head++;
 		}
+	}
+
+void element()
+{
+	if(head==Size)
+	{
+		printf("\nnull\n");
+	}
+	else
+	{
+      
+       printf("\nThe peeked element is : %d\n", queue[head]);
+	}
+
 }
 int main()
 {
-	add();
-	add();
-	add();
-	add();
-	add();
-	remove_out();
-	remove_out();
-	remove_out();
-	remove_out();
-	remove_out();
+	offer();
+	offer();
+	offer();
+	offer();
+	offer();
+	offer();
+	element();
+	poll();
+	poll();
+	poll();
+	poll();
+	poll();
+	poll();
+	element();
 }

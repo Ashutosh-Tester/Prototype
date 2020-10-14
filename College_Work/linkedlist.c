@@ -9,10 +9,6 @@ void add(int data)
 {
 	struct Node* node,*n;
 	node=(struct Node*)malloc(sizeof(struct Node));
-	if(node==NULL)
-	{
-		printf("\nList is empty\n");
-	}
 	// printf("\nEnter elements in the list\n");
 	// scanf("%d",&node->data);
 	node->data=data;
@@ -66,9 +62,48 @@ void delete()
 		head=head->next;
 	}
 }
+void delete_begin()
+{struct Node* n;
+	n=head;
+	if(n==NULL)
+	{
+		printf("\nList is Empty\n");
+	}
+	else
+	{
+		printf("\nThe Deleted element is : %d\n",n->data);
+		head=head->next;
+
+	}
+
+}
+void delete_end()
+{
+	struct Node* n,*node;
+	n=head;
+	if(n==NULL)
+	{
+		printf("\nList is Empty\n");
+	}
+	else if(head->next==NULL)
+	{   n=head;
+		head=NULL;
+		printf("\nThe Deleted element is : %d \n",n->data);
+	}
+	else
+	{
+		while(n->next!=NULL)
+		{
+			node=n;
+			n=n->next;
+		}
+		printf("\nThe Deleted element is : %d ",n->data);
+		node->next=NULL;
+		free(n);
+	}
+}
 void delete_pos(int pos)
 {
-	printf("%d\n",pos);
 struct Node* n,*node;
 n=head;
 if(head==NULL)
@@ -103,6 +138,9 @@ int main()
 	add(3);
 	add(4);
 	add(5);
-	delete_pos(3);
+	delete();
+	delete_end();
+	delete_begin();
 	display();
+
 }
