@@ -1,3 +1,4 @@
+//This program is to implement Doubly Linked List
 #include<stdio.h>
 #include<stdlib.h>
 struct Node 
@@ -167,18 +168,8 @@ int main()
 	add(5);
 	add(6);
 	print();
-	add_begin(8);
-	print();
-	add_last(7);
-	print();
-	add_pos(0,4);
-	print();
-	delete_begin();
-	print();
 	delete_last();
 	print();
-	delete_pos(3);
-	print();
 	back_print();
-
+	
 }
