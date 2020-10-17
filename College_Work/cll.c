@@ -47,36 +47,68 @@ void add_begin(int data)
 {
      struct Node* node;
      node=(struct Node*)malloc(sizeof(struct Node));
+     if(head==NULL)
+     {
+     	node->data=data;
+     	node->next=node;
+     	head=node;
+     }
+     else{
      node->data=data;
      node->next=head->next;
-     head->next=node;
+     head->next=node;}
 }
 void add_pos(int data,int pos)
 {
 	struct Node *node,*n,*temp;
 	node=(struct Node*)malloc(sizeof(struct Node));
-	n=head->next;
-	for(int i=0;i<pos-1;i++)
+	if(head==NULL)
 	{
-		temp=n;
-		n=n->next;
+		node->data=data;
+		node->next=node;
+		head=node;
 	}
-	node->data=data;
-	temp->next=node;
-	node->next=n;   
+	else 
+	{
+		if(pos!=0){
+	  n=head->next;
+	   for(int i=0;i<pos-1;i++)
+     	{
+		    temp=n;
+		    n=n->next;
+	    }
+	     node->data=data;
+	     temp->next=node;
+	     node->next=n; }
+	     else
+	     {
+	     	printf("\nPlease enter valid position");
+	     }
+	}  
 }
 void delete_begin()
 {
 	struct Node* temp;
-    temp=head->next;
-    head->next=temp->next;
-    //head->next=head->next->next;// This statement will also delete the first node of the circular linked list. 
+	if(head->next==NULL)
+	{
+	   head=NULL;
+    } 
+    else
+    {
+        temp=head->next;
+        head->next=temp->next;
+    }
 }
 void delete_last()
 {
 	int size;size=0;
 	struct Node* n,*node;
 	n=head->next;
+	if(head->next==NULL)
+	{
+		head=NULL;
+	}
+	else{
 	do{
          size++;
          n=n->next;
@@ -94,16 +126,24 @@ void delete_last()
 	// printf("\nValue the head is pointing too : %d \n",head->data);
 	// printf("\nValue the n is pointing too : %d \n",n->data);
 }
+}
 void delete_pos(int pos)
 {
 struct Node* node,*n;
 n=head->next;
+if(head->next==NULL)
+{
+	head=NULL;
+}
+else
+{
 for(int i=0;i<pos-1;i++)
 {
   node=n;
   n=n->next;
 }
 node->next=n->next;
+}
 }
 void test_demo()
 {
