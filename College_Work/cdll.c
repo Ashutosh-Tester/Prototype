@@ -7,10 +7,13 @@ struct Node
 	struct Node*prev;
 	int data,pos;
 };struct Node* head,*last;
-void add(int data)
+void add()
 {
+	int data;
 	struct Node* node;
 	node=(struct Node*)malloc(sizeof(struct Node));
+	printf("\nEnter the element : ");
+	scanf("%d",&data);
 	if(head==NULL)
 	{
 		node->data=data;
@@ -27,10 +30,13 @@ void add(int data)
 		last=node;
 	}
 }
-void add_begin(int data)
+void add_begin()
 {
+	int data;
 	struct Node* node;
 	node=(struct Node*)malloc(sizeof(struct Node));
+		printf("\nEnter the element : ");
+	scanf("%d",&data);
 	if(head==NULL)
 	{
 		node->data=data;
@@ -47,10 +53,12 @@ void add_begin(int data)
 	 last->next=head;
     }
 }
-void add_last(int data)
-{
+void add_last()
+{int data;
    struct Node* node,*n;
    node=(struct Node*)malloc(sizeof(struct Node));
+   	printf("\nEnter the element : ");
+	scanf("%d",&data);
    if(head==NULL)
    {
    	 node->data=data;
@@ -68,10 +76,15 @@ void add_last(int data)
      //last->next=head;
     }
 }
-void add_pos(int data,int pos)
+void add_pos()
 {
+	int data,pos;
        struct Node* node,*n,*temp;
        node=(struct Node*)malloc(sizeof(struct Node));
+       	printf("\nEnter the element : ");
+	scanf("%d",&data);
+		printf("\nEnter the position : ");
+	scanf("%d",&pos);
        if(head==NULL)
        {
        	node->data;
@@ -131,8 +144,9 @@ void delete_last()
 	//last=n;          */ for deletion of last element.               
 }
 }
-void delete_pos(int pos)
+void delete_pos()
 {
+	int pos;
 	struct Node*n,*temp;
 	n=head;
 	if(head==NULL)
@@ -141,7 +155,9 @@ void delete_pos(int pos)
 	}
 	else
 	{
-		for(int i=0;i<pos-1;i++)
+	     printf("\nEnter the position : ");
+	     scanf("%d",&pos);
+	 	for(int i=0;i<pos-1;i++)
 		{
 			temp=n;
 			n=n->next;
@@ -193,7 +209,7 @@ else
 }
 
 }
-int size_calculator()
+ void size_calculator()
 {
 	int size;size=0;
 	struct Node* n;
@@ -201,6 +217,7 @@ int size_calculator()
 	if(head==NULL)
 	{
 		printf("\nError : List is Empty, cannot calculate size");
+		exit(0);
 	}
 	else
 	{
@@ -211,35 +228,54 @@ int size_calculator()
 		}
 		while(n!=head);
 	}
-	return size;
+	printf("\nThe size of List is : %d ",size);
 }
 int main()
 {
-	add(2);
-	add(3);
-	add(5);
-	add(6);
-	add(7);
-	show();
-add_begin(1);
-add_last(8);
-show();
-add_pos(4,4);
-show();
-delete_begin();
-delete_begin();
-show();
-reverse_show();
-delete_begin();
-reverse_show();
-show();
-delete_last();
-show();
-reverse_show();
-delete_pos(2);
-show();
-reverse_show();
-int a=size_calculator();
-printf("\nSize = %d ",a);
+	int a,b,i;a=0;b=0;
+	
+	do{
+		printf("\n\n1 : Insert elements ");
+		printf("\n2 : Insert element at the beginning ");
+		printf("\n3 : Insert element at the last ");
+		printf("\n4 : Insert elements at a specific position ");
 
+	printf("\n5 : Display");
+	printf("\n6 : Delete element at the beginning");
+	printf("\n7 : Delete element at the last");
+	printf("\n8 : Delete the element at any position");
+	printf("\n9 : Display elements in reverse order ");
+	printf("\n10 : Prints the size of List ");
+	printf("\nPlease Enter your choice : ");
+	scanf("%d",&a);
+	switch(a)
+	{
+		case 1: printf("\nEnter the size of List\n");
+		        scanf("%d",&b);
+		        for(i=1;i<=b;i++)
+		        {
+		 	       add();}
+		         break;
+		case 2: add_begin();
+		break;
+		case 3: add_last();
+		break;
+		case 4: add_pos();
+		break;
+		case 5: show();
+		break;
+		case 6: delete_begin();
+		break;
+		case 7: delete_last();
+		break;
+		case 8: delete_pos();
+		break;
+		case 9: reverse_show();
+		break;
+		case 10: size_calculator();
+		break;
+		default: printf("\nPlease Enter correct choice");
+	}
+}
+	while(a<=10);
 }
