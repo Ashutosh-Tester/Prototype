@@ -87,13 +87,12 @@ int main()
 	offer();
 	offer();
 	offer();
-display();
-	// element();
+    display();
 	poll();
 	poll();
 	poll();
 	poll();
 	poll();
-display();
-element();
+    display();
+    element();
 }
