@@ -28,11 +28,21 @@ else
 }
 void display()
 {
-	for(int i=0;i<Size;i++)
+	if(head==rear)
+	{
+		head=-1;
+		rear=-1;
+		printf("\nThe Queue is Empty Now");
+
+	}
+	else{
+		printf("\nThe elements are : ");
+	for(int i=head;i<rear;i++)
 	{
 		printf("%d ",queue[i]);
 
 	}
+}
 }
 
 void poll()
@@ -49,7 +59,8 @@ void poll()
 	}
 	else
 		{
-			printf("%d ",queue[head]);
+
+			printf("\nThe polled element is : %d ",queue[head]);
 			head++;
 		}
 	}
@@ -72,15 +83,17 @@ int main()
 	offer();
 	offer();
 	offer();
+	display();
 	offer();
 	offer();
 	offer();
-	element();
+display();
+	// element();
 	poll();
 	poll();
 	poll();
 	poll();
 	poll();
-	poll();
-	element();
+display();
+element();
 }
