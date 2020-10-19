@@ -35,7 +35,7 @@ void display()
 	}
 }
 
-void poll()
+void poll(int data)
 {
 	if(head==-1)
 	{
