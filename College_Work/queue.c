@@ -20,9 +20,9 @@ else
 	}
 
 	else{
-		queue[rear]=data;
-		rear++;
-			}
+		   queue[rear]=data;
+		   rear++;
+		}
 }
 
 }
@@ -67,7 +67,7 @@ void poll()
 
 void element()
 {
-	if(head==Size)
+	if(head==rear)
 	{
 		printf("\nnull\n");
 	}
@@ -79,20 +79,50 @@ void element()
 
 }
 int main()
-{
-	offer();
-	offer();
-	offer();
-	display();
-	offer();
-	offer();
-	offer();
-    display();
-	poll();
-	poll();
-	poll();
-	poll();
-	poll();
-    display();
-    element();
+{int i,size,a;a=0;size=0;
+	do
+	{
+		printf("\n1: Insert element");
+		printf("\n2: Delete element");
+		printf("\n3: Peek element");
+		printf("\n4: Display element");
+		printf("\n5: Exit");
+		printf("\nEnter your choice : ");
+		scanf("%d",&a);
+		switch(a)
+		{
+			case 1: //printf("\nEnter the size : ");
+			       //   scanf("%d",&size);
+			//Size is allocated so no need of entering size.
+			    for(i=0;i<Size;i++)
+			    {
+				    offer();
+			    }
+			break;
+			case 2:poll();
+			break;
+			case 3:element();
+			break;
+			case 4:display();
+			break;
+			default:printf("\nPlease enter correct choice");
+		}
+
+	}
+	while(a<=4);
+	// offer();
+	// offer();
+	// offer();
+	// display();
+	// offer();
+	// offer();
+	// offer();
+ //    display();
+	// poll();
+	// poll();
+	// poll();
+	// poll();
+	// poll();
+ //    display();
+ //    element();
 }
