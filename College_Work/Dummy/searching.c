@@ -6,6 +6,10 @@ int search(int a[],int element,int size)
 		if(a[j]==element){
 			return j;
 		}
+      else
+      {
+         return -1;
+      }
 	}
 
 
@@ -24,6 +28,10 @@ int main(void)
    printf("\nEnter the element to be searched\n");
    scanf("%d",&element);
    i=search(a,element,size);
-   printf("\nThe element %d is found at position %d ",element,i+1);
+   if(i>-1){
+   printf("\nThe element %d is found at position %d ",element,i+1);}
+   else{
+      printf("\nThe elemnet is not present in the array");
+   }
 
 }
