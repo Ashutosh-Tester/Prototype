@@ -94,6 +94,7 @@ int main()
 			case 1: //printf("\nEnter the size : ");
 			       //   scanf("%d",&size);
 			//Size is allocated so no need of entering size.
+			printf("\nEnter %d elements in the queue \n",Size);
 			    for(i=0;i<Size;i++)
 			    {
 				    offer();
