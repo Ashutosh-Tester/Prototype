@@ -1,10 +1,8 @@
-//Implemented Stack using Doubly Linked List
 #include<stdio.h>
 #include<stdlib.h>
 struct Node
 {
 	struct Node* next;
-	struct Node* prev;
 	int data;
 };struct Node* top;
 void push()
@@ -17,7 +15,6 @@ void push()
 	 node->data=data;
 	if(top==NULL)
 	{
-	 node->prev=NULL;
 	 node->next=NULL;
 	 top=node;
 
@@ -30,9 +27,7 @@ void push()
 			n=n->next;
 		}
 		n->next=node;
-		node->prev=n;
 		node->next=NULL;
-		top=node;
 	}
 	
 
@@ -81,7 +76,13 @@ void pop()
 	}
 	else
 	{
-		n=top;
+		if(n->next==NULL)
+		{
+		  printf("\nThe popped element is : ");
+		  printf("%d",n->data);
+		  top=NULL;
+		}
+		else if(n->next->next==NULL)
 		printf("\nThe popped element is : ");
 		printf("%d",n->data);
 		top=top->prev;
