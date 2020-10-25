@@ -110,5 +110,4 @@ int main()
 
 	}
 	while(a<=4);
-	
 }
