@@ -110,19 +110,5 @@ int main()
 
 	}
 	while(a<=4);
-	// offer();
-	// offer();
-	// offer();
-	// display();
-	// offer();
-	// offer();
-	// offer();
- //    display();
-	// poll();
-	// poll();
-	// poll();
-	// poll();
-	// poll();
- //    display();
- //    element();
+	
 }
