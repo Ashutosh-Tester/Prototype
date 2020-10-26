@@ -34,7 +34,7 @@ void push()
 }
 void peek()
 {
-	struct Node* n;
+	struct Node* n,*temp;
 	if(top==NULL)
 	{
 		printf("\nStack is Empty");
@@ -42,7 +42,18 @@ void peek()
 	else
 	{
 		n=top;
-		printf("\nThe peeked element is : %d",n->data);
+		if(n->next==NULL)
+		{
+			printf("\nThe peeked element is : %d",n->data);
+		}
+		else{
+		while(n->next->next!=NULL)
+		{
+			n=n->next;
+		}
+		temp=n;
+		temp=temp->next;
+		printf("\nThe peeked element is : %d",temp->data);}
 	}
 
 }
@@ -60,7 +71,7 @@ void display()
 		while(n!=NULL)
 		{
 			printf("%d ",n->data);
-            n=n->prev;
+            n=n->next;
 		}
 	}
 
@@ -68,7 +79,7 @@ void display()
 }
 void pop()
 {
-	struct Node* n;
+	struct Node* n,*temp;
 	n=top;
 	if(top==NULL)
 	{
@@ -82,10 +93,18 @@ void pop()
 		  printf("%d",n->data);
 		  top=NULL;
 		}
-		else if(n->next->next==NULL)
-		printf("\nThe popped element is : ");
-		printf("%d",n->data);
-		top=top->prev;
+		else 
+		{
+			while(n->next->next!=NULL){
+				n=n->next;
+			}
+			temp=n;
+			temp=temp->next;
+		    printf("\nThe popped element is : ");
+		    printf("%d",temp->data);
+		    n->next=NULL;
+		    free(temp);
+	    }
 	}
 
 }
@@ -95,7 +114,7 @@ int main(void)
 	int i,a,size;a=0;i=0;size=0;
 	do
 	{
-		printf("\n1: Push element in the stack");
+		printf("\n\n1: Push element in the stack");
 		printf("\n2: Pop element from the stack");
 		printf("\n3: Peek element of the stack");
 		printf("\n4: Display elements of the stack");
