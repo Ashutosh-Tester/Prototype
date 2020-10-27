@@ -33,7 +33,6 @@ void enqueue()
 void dequeue()
 {
 	struct Node* n;
-	//n=head;
 	if(head==NULL)
 	{
 		printf("\nQueue is Empty");
@@ -116,5 +115,5 @@ int main(void)
 
 	}
 }
-	while(a<=4);
+	while(a<=5);
 }
