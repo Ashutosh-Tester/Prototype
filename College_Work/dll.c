@@ -242,6 +242,7 @@ int main()
 	printf("\n7 : Delete element at the beginning");
 	printf("\n8 : Delete element at the last");
 	printf("\n9 : Delete the element at any position");
+	printf("\n10 : Press 10 to exit");
 	printf("\nPlease Enter your choice : ");
 	scanf("%d",&a);
 	switch(a)
