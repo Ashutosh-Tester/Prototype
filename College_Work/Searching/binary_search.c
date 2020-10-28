@@ -24,9 +24,9 @@ int main(void)
   int a[size];
   for(int i=0;i<size;i++)
   {
-  	a[i]=i+1;
+  	a[i]=i;
   }
-  size=sizeof(a)/sizeof(int);
+  //size=sizeof(a)/sizeof(int);
   printf("\nEnter the number to be searched : ");
   scanf("%d",&element);
   for(int i=0;i<size;i++)
@@ -35,7 +35,7 @@ int main(void)
   }
  pos=search(a,element,size);
  if(pos>-1){
- printf("\nThe number %d is found at position : %d",element,pos);}
+ printf("\nThe number %d is found at position : %d",element,pos+1);}
  else
  {
  	printf("\nElement is not present");
