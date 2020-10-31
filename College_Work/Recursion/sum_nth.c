@@ -16,7 +16,6 @@ int main()
 	int a,b;
 	printf("\nEnter the number : ");
 	scanf("%d",&a);
-    b=sum(a);
-	printf("\nThe sum is : %d ",b);
+	printf("\nThe sum is : %d ",sum(a));
 
 }
