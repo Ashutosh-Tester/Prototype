@@ -4,11 +4,11 @@
 </head>
 <img src="Developer.jpg" width="290" height ="145" align="right">
 <h1>Ashutosh Singh</h1>
-
 <h3>
+<img src="c logo.png" width="21" height="22">  C Programmer
+<br>
+<br>
 <img src="java.png" width="25" height="25"> Java Programmer
 </h3>
 </body>
 </html>
-
-

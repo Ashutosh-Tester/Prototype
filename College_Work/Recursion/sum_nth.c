@@ -19,7 +19,6 @@ int factorial(int b)
 	}
 	else
 	{
-		printf("%d ",b);
 		return b*factorial(b-1);
 
 	}
@@ -32,6 +31,6 @@ int main()
 	printf("\nThe sum is : %d ",sum(a));
 	printf("\nEnter the number : ");
 	scanf("%d",&b);
-	printf("\nThe factorial is : %d ",factorial(b));
+	printf("\nThe factorial of %d! is : %d ",b,factorial(b));
 
 }
