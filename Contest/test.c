@@ -9,7 +9,7 @@ void prime(int a)
 		if(a%i==0){
 		c++;}
 	}
-	if(c>0)
+	if(c==2)
 		printf("\nPrime");
 	else
 		printf("\nNot Prime");
@@ -33,6 +33,4 @@ int main()
 	printf("\nEnter the no. : ");
 	scanf("%d",&a);
 	check(a);
-	//prime(a);
-   
 }
