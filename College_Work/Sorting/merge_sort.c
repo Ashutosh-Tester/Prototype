@@ -3,7 +3,7 @@ int merge(int a[],int low,int mid,int high)
 {
 	int i,j,k;
 	i=low;j=mid+1;k=low;
-	int b[50];
+	int b[100];
 	while(i<=mid && j<=high)
 	{
 		if(a[i]<a[j])
@@ -57,6 +57,6 @@ int main(void)
 	printf("\nArray before Sorting : ");
 	display(a,size);
 	sort(a,l,h);
-	printf("\nArray before Sorting : ");
+	printf("\nArray after Sorting : ");
 	display(a,size);
 }

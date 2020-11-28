@@ -61,12 +61,20 @@ int difference1(int a[],int b[],int m,int n)
 }
 int main(void)
 {
-	// int a[]={1,3,4,5,6,7,9,10,13};
-	// int b[]={3,5,7,9,11,12,14};
 	int a[]={1,2,3,4,5,6,8};
-	int b[]={2,3,5,6,7};
+	int b[]={2,3,5,6,7,9,10,11,12};
 	int size=sizeof(a)/sizeof(int);
-	int size1=sizeof(a)/sizeof(int);
+	int size1=sizeof(b)/sizeof(int);
+	printf("\nArray a : ");
+	for(int i=0;i<size;i++)
+	{
+		printf("%d ",a[i]);
+	}
+	printf("\nArray b : ");
+	for(int j=0;j<size1;j++)
+	{
+	printf("%d ",b[j]);
+    } 
     difference(a,b,size,size1);
     difference1(a,b,size,size1);
 }
