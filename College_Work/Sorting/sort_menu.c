@@ -118,6 +118,8 @@ int display(int a[],int size)
 int main(void)
 {
 	int ch,i,size,low,high;
+	int arr[]={56,92,38,44,90,61,73,23,2};
+	size=sizeof(arr)/sizeof(int);
     do{
 	printf("\nEnter 1 for Bubble Sort");
 	printf("\nEnter 2 for Selection Sort");
@@ -127,14 +129,6 @@ int main(void)
 	printf("\nEnter your choice : ");
 	scanf("%d",&ch);
 	if(ch==5){break;}
-    printf("\nEnter size of array : ");
-    scanf("%d",&size);
-	printf("\nEnter the elements of unsorted array\n");
-	 int arr[size];
-	for(i=0;i<size;i++)
-	{
-		scanf("%d",&arr[i]);
-	}
 	switch(ch)
 	{
 		case 1: bubble_sort(arr,size);

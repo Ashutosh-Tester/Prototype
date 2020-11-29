@@ -1,5 +1,5 @@
 #include<stdio.h>
-void sort(int a[],int size)
+void sort_ascend(int a[],int size)
 {
 	int i,j,temp,min;min=0;temp=0;
 	for(i=0;i<size;i++)
@@ -14,7 +14,29 @@ void sort(int a[],int size)
 			   a[i]=temp;}
 		}
 	}
-	printf("\nArray After Sorting : ");
+	printf("\nArray After Sorting in Ascending order : ");
+	for(i=0;i<size;i++)
+	{
+		printf("%d ",a[i]);
+	}
+
+}
+void sort_descend(int a[],int size)
+{
+	int i,j,temp,min;min=0;temp=0;
+	for(i=0;i<size;i++)
+	{
+		min=a[i];
+		for(j=i+1;j<size;j++)
+		{
+			if(a[j]>min){
+				min=a[j];
+				temp=a[j];
+			    a[j]=a[i];
+			   a[i]=temp;}
+		}
+	}
+	printf("\nArray After Sorting in Descending order : ");
 	for(i=0;i<size;i++)
 	{
 		printf("%d ",a[i]);
@@ -31,6 +53,7 @@ int main()
     {
        printf("%d ",a[i]);
     }
-    sort(a,size);
+    sort_ascend(a,size);
+    sort_descend(a,size);
 
 }
