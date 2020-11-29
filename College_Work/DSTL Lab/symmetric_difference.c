@@ -30,7 +30,7 @@ int sy_difference(int a[],int b[],int m,int n)
 		c[k++]=b[j];
 		j++;
 	}
-printf("\nSymmetric Difference between A and B is : ");
+printf("\nSymmetric Difference is : ");
 for(i=0;i<k;i++)
 {
 	printf("%d ",c[i]);
