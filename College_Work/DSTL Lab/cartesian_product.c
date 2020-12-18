@@ -1,5 +1,5 @@
 #include<stdio.h>
-int cartesian(int b[],int a[],int size,int size2)
+void cartesian(int b[],int a[],int size,int size2)
 {
 	int i,j;
 	for(i=0;i<size;i++)
