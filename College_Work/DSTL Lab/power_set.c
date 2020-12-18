@@ -5,23 +5,22 @@ void powerset(int a[],int size)
    int i=0,j;int power=0;
    power=pow(2,size);
    printf("\nNo. of subsets : %d " ,power);
-   printf("\nSubsets : ");
-   while(i<size)
+   for(i=0;i<power;i++)
    {
-   	printf(" {%d} ",a[i++]);
+      for(j=0;j<size;j++)
+      {
+         if(i&(1<<j))
+            printf("%d ",a[j]);
+      }
+      printf("\n");
    }
-   for(i=0;i<size;i++)
-   {
-   	for(j=i+1;j<size;j++)
-   	{
-   		printf(" {%d,%d}  ",a[i],a[j]);
 
-   	}
-   }   
+   	
+      
 }
 int main(void)
 {
-   int a[]={1,2,3};
+   int a[]={1,2,3,4};
    int size=sizeof(a)/sizeof(int);
    powerset(a,size);
 }
