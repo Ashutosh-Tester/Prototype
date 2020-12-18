@@ -1,20 +1,20 @@
 #include<stdio.h>
-int size_calculator(int a[],int b[],int size,int size1)
-{
-    int i,j,c=0,a1=0,b1=0;
-    for(i=0;i<size;i++)
-    {
-    	for(j=0;j<size;j++)
-    	{
-    		if(a[i]==b[j])
-    			c++;
-    	}
-    }
-    a1=size-c;
-    b1=size1-c;
-    c=a1+b1+c;
-    return c;
-}
+// int size_calculator(int a[],int b[],int size,int size1)
+// {
+//     int i,j,c=0,a1=0,b1=0;
+//     for(i=0;i<size;i++)
+//     {
+//     	for(j=0;j<size;j++)
+//     	{
+//     		if(a[i]==b[j])
+//     			c++;
+//     	}
+//     }
+//     a1=size-c;
+//     b1=size1-c;
+//     c=a1+b1+c;
+//     return c;
+// }
 void print_union(int a[],int b[],int size,int size1)
 {
 	int i=0,j=0,k=0;
@@ -80,6 +80,17 @@ int main(void)
    int b[]={3,5,7,9,11,12};
    int size=sizeof(a)/sizeof(int);
     int size1=sizeof(b)/sizeof(int);
+     printf("\nArray 1 : ");
+   for(int i=0;i<size;i++)
+   {
+      printf("%d ",a[i]);
+   }
+   printf("\nArray 2 : ");
+   for(int j=0;j<size1;j++)
+   {
+      printf("%d ",b[j]);
+   }
    print_union(a,b,size,size1);
+  
    // set_union(a,b,size,size1);
 }
