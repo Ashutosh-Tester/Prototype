@@ -15,17 +15,30 @@ int intersection_set(int a[],int b[],int m,int n)
           	i++;
            }
     }
-    printf("\nIntersection of two sets : ");
+    printf("\nIntersection of two sets : { ");
     for(i=0;i<k;i++)
     {
     	printf("%d ",c[i]);
     }
+    printf("}");
 }
 int main(void)
 {
-	int a[]={1,3,5,7,9,10};
-	int b[]={3,5,7,9,11,12};
+  int i;
+	int a[]={1,3};
+	int b[]={3,4,5,7};
 	 int size=sizeof(a)/sizeof(int);
     int size1=sizeof(b)/sizeof(int);
+    printf("\nSet A : { ");
+    for(i=0;i<size;i++)
+    {
+       printf("%d ",a[i]);
+    }
+    printf("}\nSet B : { ");
+    for(i=0;i<size1;i++)
+    {
+       printf("%d ",b[i]);
+    }
+    printf("}");
     intersection_set(a,b,size,size1);
 }
