@@ -3,7 +3,7 @@
 struct Node
 {
 	struct Node* next;
-	int data,pos;
+	int data;
 };struct Node* head=NULL;
 void add(int data)
 {
@@ -119,15 +119,12 @@ void delete_pos(int pos)
 }
 int main(void)
 {
-	add(1);
-	add(2);
-	add(3);
-	add(4);
-	add_pos(4,11);
-	add_pos(0,-1);
+	add_pos(0,1);
+	add_pos(1,2);
+	add_pos(2,3);
+	add_pos(3,4);
 	display();
 	delete_pos(0);
-	delete_pos(4);
 	display();
 
 }
