@@ -1,8 +1,8 @@
-#include<math.h  >
+#include<math.h>
 #include<stdio.h>
-void powerset(int a[],int size)
+void powerset(int set[],int size)
 {
-   int i=0,j;int power=0;
+   int i,j;int power=0;
    power=pow(2,size);
    printf("\nNo. of subsets : %d " ,power);
    for(i=0;i<power;i++)
@@ -10,7 +10,7 @@ void powerset(int a[],int size)
       for(j=0;j<size;j++)
       {
          if(i&(1<<j))
-            printf("%d ",a[j]);
+            printf("%d ",set[j]);
       }
       printf("\n");
    }
@@ -20,7 +20,14 @@ void powerset(int a[],int size)
 }
 int main(void)
 {
-   int a[]={1,2,3,4};
-   int size=sizeof(a)/sizeof(int);
-   powerset(a,size);
+   int size,i;
+   printf("\nEnter the size of set : ");
+   scanf("%d",&size);
+   int set[size];
+   printf("Enter the elements\n");
+   for(i=0;i<size;i++)
+   {
+      scanf("%d",&set[i]);
+   }
+   powerset(set,size);
 }
