@@ -49,25 +49,30 @@ void delete(int pos)
 	{
 		if(head==NULL){
 		printf("\nList is empty");}
-		else
+		else if(n->next!=NULL)
 		{
 			n=n->next;
 			head->next=NULL;
 			n->prev=NULL;
 			head=n;
 		}
+		else
+		{
+			head=NULL;
+		}
 	}
 	else{
+		
 	for(int i=0;i<pos;i++)
 	{
 		temp=n;
 		n=n->next;
-	}if(n!=NULL){
+	}
 	n=n->next;
+	if(n!=NULL){
 	temp->next=n;
 	n->prev=temp;}
     else{
-	n->prev=NULL;
 	temp->next=n;
 
     }}
@@ -93,6 +98,12 @@ int main(void)
 	add(4,5);
 	add(0,10);
 	display();
-  delete(5);
-  display();
+	delete(0);
+	display();
+	delete(4);
+	delete(3);
+	delete(2);
+	delete(1);
+	delete(0);
+	display();
 }
