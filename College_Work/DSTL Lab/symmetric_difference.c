@@ -1,6 +1,6 @@
 #include<stdio.h>
 int sy_difference(int a[],int b[],int m,int n)
-{int i,j,k;i=0;j=0;k=0;
+{int i,j,k;i=0,j=0,k=0;
 	int c[m+n];
 	while(i<m && j<n)
 	{
