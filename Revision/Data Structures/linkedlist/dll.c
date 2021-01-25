@@ -1,5 +1,6 @@
 #include<stdio.h>
 #include<stdlib.h>
+#include<stdbool.h>
 struct Node
 {
 	struct Node* next,*prev;
@@ -41,7 +42,7 @@ void add(int pos,int data)
 
 }
 
-void delete(int pos)
+void delete_by_pos(int pos)
 {
 	struct Node* n,*temp;
 	n=head;
@@ -77,17 +78,56 @@ void delete(int pos)
 
     }}
 }
+void delete_by_number(int element)
+{
+	struct Node* n,*temp;
+	n=head;
+	bool flag=false;
+	while(n!=NULL)
+	{
+		if(n->data==element)
+		{
+			flag=true;
+			temp=n;
+			break;		
+		}
+		n=n->next;
+	}
+	if(flag==false)
+	{
+		printf("\nThere is no such number in the List");
+	}
+	else
+	{
+		n=n->next;
+		temp=temp->prev;
+		if(n!=NULL){
+		temp->next=n;
+		n->prev=temp;}
+		else
+		{
+			temp->next=n;
+		}
+	}
+
+}
 void display()
 {
 	struct Node*n;
 	n=head;
+	if(head==NULL)
+	{
+		printf("\nThe List is empty");
+	}
+	else
+	{
 	printf("\nList : ");
 	while(n!=NULL)
 	{
 		printf("%d ",n->data);
 		n=n->next;
 
-	}
+	}}
 }
 int main(void)
 {
@@ -97,13 +137,7 @@ int main(void)
 	add(3,4);
 	add(4,5);
 	add(0,10);
-	display();
-	delete(0);
-	display();
-	delete(4);
-	delete(3);
-	delete(2);
-	delete(1);
-	delete(0);
+	delete_by_pos(0);
+	delete_by_number(2);
 	display();
 }
